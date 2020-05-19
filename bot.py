@@ -1,22 +1,53 @@
-print('Hello! My name is Aid.')
-print('I was created in 2020.')
-print('Please, remind me your name.')
+def greet(bot_name, birth_year):
+    print('Hello! My name is ' + bot_name + '.')
+    print('I was created in ' + birth_year + '.')
 
-name = input()
 
-print('What a great name you have, ' + name + '!')
-print('Let me guess your age.')
-print('Enter remainders of dividing your age by 3, 5 and 7.')
+def remind_name():
+    print('Please, remind me your name.')
+    name = input()
+    print('What a great name you have, ' + name + '!')
 
-age = (int(input()) * 70 + int(input()) * 21 + int(input()) * 15) % 105
 
-print("Your age is " + str(age) + "; that's a good time to start programming!")
-print('Now I will prove to you that I can count to any number you want.')
+def guess_age():
+    print('Let me guess your age.')
+    print('Enter remainders of dividing your age by 3, 5 and 7.')
 
-maxCount = int(input())
-count = 0
-while count <= maxCount:
-    print(count, "!")
-    count += 1
+    age = (int(input()) * 70 + int(input()) * 21 + int(input()) * 15) % 105
 
-print('Completed, have a nice day!')
+    print("Your age is " + str(age) + "; that's a good time to start programming!")
+
+
+def count():
+    print('Now I will prove to you that I can count to any number you want.')
+
+    num = int(input())
+    curr = 0
+    while curr <= num:
+        print(curr, '!')
+        curr = curr + 1
+
+
+def test():
+    print("Let's test your programming knowledge.")
+    print('''
+    Why do we use methods?
+    1. To repeat a statement multiple times.
+    2. To decompose a program into several small subroutines.
+    3. To determine the execution time of a program.
+    4. To interrupt the execution of a program.
+    ''')
+    while int(input()) != 2:
+        print("Please, try again.")
+    print('Completed, have a nice day!')
+
+def end():
+    print('Congratulations, have a nice day!')
+
+
+greet('Aid', '2020')  # change it as you need
+remind_name()
+guess_age()
+count()
+test()
+end()
